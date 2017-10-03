@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 const app = express();
-
+const PORT = process.env.PORT || 3000;
 
 // this line lets your program use partials must be above the app.set and the app.use for view engine
 // to have nodemon watch the hbs extension files you must add the e flag to the command line eg. next line
@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 		}
 	});
 
-	// next();
+	next();
 });
 
 
@@ -78,6 +78,6 @@ app.get("/help", (req, res)=> {
 
 
 
-app.listen(3000, ()=> {
-	console.log("app is running on port 3000");
+app.listen(PORT, ()=> {
+	console.log(`app is running on port ${PORT}`);
 })
