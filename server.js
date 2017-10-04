@@ -76,7 +76,13 @@ app.get("/help", (req, res)=> {
 	res.render("./public/help.html");
 })
 
+app.get('/projects', (req, res) => {
+	res.render("projects.hbs", {
+		projects: [],
+		message: "Welcome to my projects page."
+	})
 
+})
 
 app.listen(PORT, ()=> {
 	console.log(`app is running on port ${PORT}`);
